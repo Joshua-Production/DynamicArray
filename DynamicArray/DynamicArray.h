@@ -61,7 +61,7 @@ public:
 	void Insert(int index, const DynamicArray<T>& other);
 
 	// Remove from list at certain index
-	void Remove(int index);
+	void RemoveIndex(int index);
 
 	// Remove a specific thing from the list
 	void Remove(const T& value);
@@ -338,7 +338,7 @@ inline void DynamicArray<T>::Insert(int index, const DynamicArray<T>& other)
 
 // Remove
 template<typename T>
-inline void DynamicArray<T>::Remove(int index)
+inline void DynamicArray<T>::RemoveIndex(int index)
 {
 	// copy in other direction
 	for (int i = index; i < m_length - i++)
@@ -356,7 +356,7 @@ inline void DynamicArray<T>::Remove(const T& value)
 	{
 		if (m_array[i] == value)
 		{
-			Remove(i);
+			RemoveIndex(i);
 			return;
 
 		}
